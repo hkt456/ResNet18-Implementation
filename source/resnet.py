@@ -4,7 +4,7 @@ import torch.nn as nn
 from residual_block import Residual_Block
 from layer_maker import _make_layer
 
-class ResNet18(nn.Module):
+class ResNet(nn.Module):
     def __init__(self,
                  block, 
                  layers,
@@ -42,6 +42,19 @@ class ResNet18(nn.Module):
         x = self.fc(x)
 
         return x
+
+    def ResNet18():
+        layer = [2,2,2,2]
+        model = ResNet18(Residual_Block, layer)
+        return model
+
+    def ResNet34():
+        layer = [3,4,6,3]
+        model = ResNet18(Residual_Block, layer)
+        return model
+
+    
+    
 
 
 
